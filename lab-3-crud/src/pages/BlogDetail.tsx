@@ -20,12 +20,6 @@ export default function BlogDetail() {
             >
                 Back To List
             </button>
-            <button 
-                className="text-white bg-amber-400 rounded-md px-4 py-2 cursor-pointer"
-                onClick={() => navigate(`/blog/edit/${blogId}`)}
-            >
-                Edit
-            </button>
         </div>
         
     </div>
