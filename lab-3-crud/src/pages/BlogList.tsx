@@ -23,13 +23,29 @@ export default function BlogList() {
         <ul>
             {blogs.map((blog, index) => <li key={index}>
                 <div className='flex justify-between'>
-                    <Link className='text-xl' to={blog.id}>{blog.title}</Link>
-                    <button 
-                        className='bg-red-400 text-white px-4 py-2 rounded-md cursor-pointer'
-                        onClick={() => handleDelete(blog.id)}
-                    >
-                        DELETE
-                    </button>
+                    <div className='text-xl'>
+                        {blog.title}
+                    </div>
+                    <div className='flex gap-4'>
+                        <button 
+                            className='bg-green-400 px-4 py-2 rounded-md cursor-pointer'
+                            onClick={() => navigate(blog.id)}
+                        >
+                            See Detail
+                        </button>
+                        <button 
+                            className='bg-amber-400 px-4 py-2 rounded-md cursor-pointer'
+                            onClick={() => navigate(`edit/${blog.id}`)}
+                        > 
+                            Edit
+                        </button>
+                        <button 
+                            className='bg-red-400 text-white px-4 py-2 rounded-md cursor-pointer'
+                            onClick={() => handleDelete(blog.id)}
+                        >
+                            DELETE
+                        </button>
+                    </div>
                 </div>
             </li>)}
         </ul>
